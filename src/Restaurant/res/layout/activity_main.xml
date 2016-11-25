@@ -20,13 +20,13 @@
         android:textSize="40px" />
     
     <Button
-        android:id="@+id/menu"
+        android:id="@+id/seat"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
-        android:text="菜单" />
+        android:text="座位" />
 
     <Button
         android:id="@+id/quit"
