@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/regsiter_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center" >
+        
+        <FrameLayout
+            android:id="@id/username_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入账号"
+                android:inputType="number"
+                android:maxLength="20"
+                android:paddingLeft="55dp"
+                android:paddingRight="60dp"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/bt3_username_clear"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_clear"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:layout_width="31dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/login_usr_in_img"
+                android:visibility="visible" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/usercode2_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/username_layout"
+            android:layout_marginTop="6dp"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/password2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:paddingLeft="55dp"
+                android:paddingRight="60dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="31dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/login_code_in_img"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/bt4_username_clear"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_clear"
+                android:visibility="invisible" >
+            </Button>
+
+        </FrameLayout>
+
+         <FrameLayout
+           android:id="@+id/usercode3_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usercode2_layout"
+            android:layout_marginTop="6dp"
+            android:gravity="center" >
+
+            <EditText
+                android:id="@+id/password3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请重新输入密码"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:paddingLeft="55dp"
+                android:paddingRight="60dp"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="31dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/login_code_in_img"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/bt5_username_clear"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/button_clear"
+                android:visibility="invisible" >
+            </Button>
+
+            
+        </FrameLayout>
+        
+        <Button
+            android:id="@+id/regsiter"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usercode3_layout"
+            android:layout_marginTop="30dp"
+            android:background="#ff336699"
+            android:text="@string/register"
+            android:gravity="center"
+            android:textColor="@android:color/white" />
+        
+    </RelativeLayout>
+
+</RelativeLayout>
