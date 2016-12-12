@@ -8,5 +8,7 @@
     <string name="forgetpwd">忘记密码？</string>
 	<string name="exit">退出</string>
 	<string name="remember_pwd">记住密码</string>
-	<string name="bt_enter">选座</string>
+	<string name="bt_enter">进入应用</string>
+	<string name="acountname">账号：</string>
+	<string name="exitlogin">退出登入</string>
 </resources>
