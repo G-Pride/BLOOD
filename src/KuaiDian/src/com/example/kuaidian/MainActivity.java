@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-	private Button regsiterButton, exitButton, loginButton,cleanButton1,cleanButton2;
+	private Button regsiterButton, exitButton, loginButton,cleanButton1,cleanButton2,forgetbtn;
 	public String loginName, loginPwd;
 	private EditText usernameEditText2, userpwdEditText2;
 	private CheckBox rememberpwdBox;
@@ -132,6 +132,17 @@ public class MainActivity extends Activity {
 									}
 								}).show();
 
+			}
+		});
+		forgetbtn=(Button)findViewById(R.id.forgetpwd);
+		forgetbtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent=new Intent(MainActivity.this,Forgetpwd.class);
+				startActivity(intent);
+				MainActivity.this.finish();
 			}
 		});
 	}
