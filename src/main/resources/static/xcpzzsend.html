@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资料制作申请信息</title>
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/ownCss/view.css">
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <!--导航栏-->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" style="max-width:40px;margin-top:-10px;" src="picture/nav_fish.svg">
+                    </a>
+                    <a class="navbar-brand" href="home.html">宣传管理</a>
+                </div>
+                <!--下拉菜单-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!--宣传信息发布-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传信息发布<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="xcxxfbsq.html">宣传信息发布申请 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcxxfbcx.html">宣传信息发布查询 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcxxlbgl.html">宣传信息发布管理 </a>
+                                </li>
+                                <li class="divider">
+                                <li>
+                                    <a href="xcxxfbtj.html">宣传信息发布统计 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--宣传品(资料)制作-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传品(资料)制作<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="xcpzzsq.html">宣传品(资料)制作申请 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcpzhzcx.html">宣传品(资料)制作查询 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcpzhiztj.html">宣传品(资料)制作统计 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--宣传物资领用-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传物资领用<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="xcwzlysq.html">宣传物资领用申请 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcwzlycx.html">宣传物资领用查询 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcwzlytj.html">宣传物资领用统计 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--标题 h4居中-->
+            <h4 class="text-center">
+                <b>宣传品（资料）制作申请</b>
+            </h4>
+            <!--状态 h6靠左-->
+            <div style="color: #2aabd2;float:left">
+                <h6 style="float: left">
+                    状态:
+                </h6>
+                <!--审批/待审批-->
+                <h6 style="float: left" id="spispass">
+                    待审批
+                </h6>
+            </div>
+
+            <!--提交申请表单-->
+            <form>
+
+                <table class="table table-bordered "
+                       style="margin:0px; padding:0px;text-align: center;vertical-align: middle">
+                    <tr>
+                        <td class="info" style="width: 16%">
+                            申请部门
+                        </td>
+                        <td>
+                            血源管理科
+                        </td>
+                        <td class="info tablewidth">
+                            申请时间
+                        </td>
+                        <td id="applydate">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            申请人
+                        </td>
+                        <td>
+                            张明磊
+                        </td>
+                        <td class="info">
+                            联系电话
+                        </td>
+                        <td>
+                            15017760683
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="info">
+                            *标题
+                        </td>
+                        <td id="title"  colspan="3">
+
+                        </td>
+                    </tr>
+
+
+                </table>
+
+                <table class="table table-bordered "
+                       style="margin:0px; padding:0px;text-align: center;vertical-align: middle">
+
+                    <tbody id="tabletr">
+
+
+                    <tr>
+                        <td class="info" style="width: 16%">
+                            宣传品类别
+                        </td>
+                        <td id="leibie_choose" style="width: 28%">
+
+                        </td>
+                        <td class="info " style="width: 23%">
+                            宣传品名称
+                        </td>
+                        <td id="name" >
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="width: 16%">
+                            制作方式
+                        </td>
+                        <td  colspan="3">
+                            <div id="makestyle" style="float: left; padding-left: 12%" ></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            要求完成时间
+                        </td>
+                        <td id="finishtime" style="width: 28%">
+
+                        </td>
+                        <td class="info">
+                            规格
+                        </td>
+                        <td id="standard">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            单位
+                        </td>
+                        <td id="company" style="width: 28%">
+
+                        </td>
+                        <td class="info">
+                            制作数量
+                        </td>
+                        <td id="count">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            广告公司名称
+                        </td>
+                        <td   colspan="3">
+                            <div id="companyName" style="float: left; padding-left: 12%" ></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            广告公司联系人
+                        </td>
+                        <td id="companyLinkman" style="width: 28%">
+
+                        </td>
+                        <td class="info">
+                            广告公司联系方式
+                        </td>
+                        <td id="companyPhone">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            费用（元）
+                        </td>
+                        <td  colspan="3">
+                            <div id="price" style="float: left; padding-left: 12%" ></div>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+
+                <table class="table table-bordered " style="text-align: center;vertical-align: middle">
+                    <tr>
+                        <td class="info" style="width: 16%">
+                            总费用（元）
+                        </td>
+                        <td id="totalPrice" style="width: 28%">
+
+                        </td>
+                        <td class="info" style="width: 23%">
+                            负责人
+                        </td>
+                        <td id="manager">
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            备注
+                        </td>
+                        <td id="beizhu" colspan="3">
+                            <!--ie兼容问题解决断行问题防止自动变为在一行word-break、word-wrap”控制断行)-->
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            附件
+                        </td>
+                        <td colspan="3">
+                            <!--附件-->
+                            <div style="margin-top: 5px;margin-left: 30px">
+                                <div style="float:left" id="fileName"></div>
+                                <a href="" id="openfile" download="">
+                                    <div style="float: left;margin-left: 10px" id="openfont">
+                                    </div>
+                                </a>
+                            </div>
+                            <!--附件END-->
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            领导审批意见
+                        </td>
+                        <td colspan="3">
+                            <div style="float: left">
+                                <div id="ispass" style="color: red;font-size: 18px"></div>
+                                <div id="approvalAdvise" style="margin-top: 5px"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+            <!--提交申请表单END-->
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    $(function () {
+        var id = window.location.href.split("=")[1];
+        $.ajax({
+            url: "xcp/"+id,
+            success: function (data) {
+                var getfileName = data.filename;
+                var getfileurl = data.filepath;
+                var openfont = "Open";
+                var downfile = document.getElementById("openfile");
+                downfile.href = data.filepath;
+                downfile.download = data.filepath;
+                $("#spispass").eq(0).html(data.commonAdvise);
+                $("#fileName").eq(0).html(getfileName);
+                $("#openfont").eq(0).html(openfont);
+                $("#applydate").eq(0).html(data.applydate);
+                $("#title").eq(0).html(data.title);
+                $("#leibie").eq(0).html(data.leibie);
+                $("#name").eq(0).html(data.name);
+                $("#makestyle").eq(0).html(data.makestyle);
+                $("#finishtime").eq(0).html(data.finishtime);
+                $("#standard").eq(0).html(data.standard);
+                $("#company").eq(0).html(data.company);
+                $("#count").eq(0).html(data.count);
+                $("#companyName").eq(0).html(data.companyName);
+                $("#companyLinkman").eq(0).html(data.companyLinkman);
+                $("#companyPhone").eq(0).html(data.companyPhone);
+                $("#price").eq(0).html(data.price);
+                $("#totalPrice").eq(0).html(data.totalPrice);
+                $("#manager").eq(0).html(data.manager);
+                $("#beizhu").eq(0).html(data.beizhu);
+                $("#ispass").eq(0).html(data.commonAdvise);
+                $("#approvalAdvise").eq(0).html(data.approvalAdvise);
+            }
+        });
+    });
+
+</script>
+
+
+</html>

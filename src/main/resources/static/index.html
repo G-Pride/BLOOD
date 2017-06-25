@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>&nbsp;欢迎使用DFish系统&nbsp;</title>
+    <link rel="stylesheet" href="assets/ownCss/view.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="assets/js/login.js"></script>
+    <link rel="stylesheet" href="assets/ownCss/dialog/animate.css">
+    <link rel="stylesheet" href="assets/ownCss/loginluara/luara.css">
+
+</head>
+<body background="picture/loginbackground.png">
+<div class="index-login">
+    <div class="login index-login-intro">
+        <h1 style="color: rgba(255,0,0,0.51)"><img style="max-width:60px;margin-top:-10px;" src="picture/nav_redfish.svg">&nbsp;DFish系统</h1>
+        <h4 style="color: #2e6da4">使用账号和密码登录</h4>
+
+        <form method="post" action="/login">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                <input type="text" name="username" class="form-control" placeholder="账号"/>
+            </div>
+            <br/>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                <input type="password" name="password" class="form-control" placeholder="密码"/>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">登陆</button>
+            <a style="float: right;" href="javascript:;" class="demo6">
+                现在注册！</a>
+            <a style="float: right; padding-right:13px;color: deepskyblue">忘记密码？</a>
+            <br/><br/>
+        </form>
+        <h4>
+            使用第三方账号登录
+            <a>
+                <button type="button" class="btn btn-primary" style="margin-left: 20px" title="QQ"><i class="fa fa-qq"
+                                                                                                      aria-hidden="true"></i>
+                </button>
+            </a>
+            <a>
+                <button type="button" class="btn btn-primary" style="background-color: #228b22" title="微信"><i
+                        class="fa fa-weixin" aria-hidden="true"></i></button>
+            </a>
+            <a>
+                <button type="button" class="btn btn-primary" style="background-color: #ff4500" title="新浪微博"><i
+                        class="fa fa-weibo" aria-hidden="true"></i></button>
+            </a>
+        </h4>
+    </div>
+    <div class="intro index-login-right">
+        <!--Luara图片切换骨架begin-->
+        <div class="example">
+            <ul>
+                <li><img src="picture/images/1.jpg" alt="1"/></li>
+                <li><img src="picture/images/2.jpg" alt="2"/></li>
+                <li><img src="picture/images/3.jpg" alt="3"/></li>
+                <li><img src="picture/images/4.jpg" alt="4"/></li>
+            </ul>
+        </div>
+        <!--Luara图片切换骨架end-->
+
+        <!--注册弹窗开始-->
+        <div class="box">
+            <div id="HBox">
+                <form action="" method="post" onsubmit="return false;">
+                    <ul class="list">
+                        <li>
+                            <strong>账 号 <font color="#ff0000">*</font></strong>
+                            <div class="fl"><input type="text" name="username" value="" class="ipt username"/></div>
+                        </li>
+                        <li>
+                            <strong>密 码 <font color="#ff0000">*</font></strong>
+                            <div class="fl"><input type="password" name="password" value="" class="ipt password" /></div>
+                        </li>
+                        <li>
+                            <strong>邮 箱 <font color="#ff0000">*</font></strong>
+                            <div class="fl"><input type="text" name="email" value="" class="ipt email" /></div>
+                        </li>
+                        <li><input type="submit" value="确认提交" class="submitBtn"/></li>
+                    </ul>
+                </form>
+            </div><!-- HBox end -->
+        </div><!--注册结束-->
+
+    </div>
+</div>
+<!--注册弹窗-->
+<script src="assets/js/dialog/jquery.min.js"></script>
+<script src="assets/js/dialog/jquery.hDialog.js"></script>
+<script>
+    $(function () {
+        var $el = $('.dialog');
+        $el.hDialog();
+
+        //遮罩不可关闭
+        $('.demo6').hDialog({modalHide: false});
+
+        //提交并验证表单
+        $('.submitBtn').click(function () {
+            var EmailReg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/; //邮件正则
+            var $username = $('.username');
+            var $email = $('.email');
+            var $password = $('.password');
+            var user = {username: $username.val(), password: $password.val(), email: $email.val()};
+            if ($username.val() == '') {
+                $.tooltip('用户名还没填呢...');
+                $username.focus();
+            } else if ($password.val() == '') {
+                $.tooltip('密码还没有呢...');
+                $password.focus();
+            } else if ($email.val() == '') {
+                $.tooltip('邮箱还没填呢...');
+                $email.focus();
+            } else if (!EmailReg.test($email.val())) {
+                $.tooltip('邮箱格式错咯...');
+                $email.focus();
+            } else {
+                $.ajax({
+                    url: "user",
+                    method: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify(user),
+                    dataType: "json",
+                    success: function (data) {
+                        $.tooltip('提交成功，2秒后自动关闭', 2000, true);
+                        setTimeout(function () {
+                            $el.hDialog('close', {box: '#HBox'});
+                        }, 2000);
+                    },
+                    error: function (message) {
+
+                    }
+                });
+            }
+        });
+    });
+</script>
+<!--注册结束-->
+<!--登录页面右侧轮播-->
+<script src="assets/js/jquery.luara.0.0.1.min.js"></script>
+<script>
+    $(function(){
+        <!--调用Luara示例-->
+        $(".example").luara({width:"373",height:"348",interval:2000});
+
+    });
+</script>
+<!--登录页面右侧轮播END-->
+</body>
+</html>

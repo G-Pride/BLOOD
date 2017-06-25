@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>宣传信息类别配置</title>
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap-treeview.js"></script>
+    <link rel="stylesheet" href="assets/ownCss/dialog/animate.css">
+    <script src="assets/js/dialog/jquery.hDialog.js"></script>
+</head>
+<body id="invest_content">
+<div>
+    <h4 class="text-center">
+        <strong>宣传信息类别配置</strong>
+    </h4>
+    <!--提交表单-->
+    <form>
+        <table class="table table-bordered " style="text-align: center;vertical-align: middle">
+
+            <tr>
+                <td class="info" style="width: 20%">
+                    类别号
+                </td>
+                <td colspan="3">
+                    <input type="text" id="" style="width: 100%;height: 95%">
+                </td>
+            </tr>
+            <tr>
+                <td class="info ">
+                    *名称（内容）
+                </td>
+                <td id=" ">
+                    <input type="text" id="name" style="width: 100%;height: 95%">
+                </td>
+            </tr>
+        </table>
+        <div style="text-align:center;">
+            <button id="btn-save" type="save" class="btn btn-lg" style="background-color: #68e1e9;"
+                    title="提交">提交
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    $("#btn-save").bind('click', function () {
+        var name = $("#name").val();
+        var lbgl = {
+            name: name
+        };
+        $.ajax({
+            url: "xclb",
+            method: "POST",
+            contentType: "application/json;charset=utf-8",
+            data: JSON.stringify(lbgl),
+            dataType: "json",
+            success: function (data) {
+                alert("保存成功");
+            },
+            error: function (message) {
+                alert("保存成功");
+            }
+        });
+    });
+</script>
+</body>
+</html>

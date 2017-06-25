@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宣传物资领用统计</title>
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/ownCss/view.css">
+    <script src="assets/js/echarts.common.min.js"></script>
+    <script src="assets/exportpdf/jspdf.debug.js"></script>
+    <script src="assets/exportpdf/html2canvas.js"></script>
+    <script src="assets/exportpdf/main.js"></script>
+    <script src="assets/layer/layer.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <!--导航栏-->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1"><span
+                    class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                    class="icon-bar"></span><span class="icon-bar"></span></button>
+            <a class="navbar-brand" href="#">
+                <img alt="Brand" style="max-width:40px;margin-top:-10px;" src="picture/nav_fish.svg">
+            </a>
+            <a class="navbar-brand" href="home.html">宣传管理</a>
+        </div>
+        <!--下拉菜单-->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <!--宣传信息发布-->
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传信息发布<strong
+                            class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="xcxxfbsq.html">宣传信息发布申请 </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="xcxxfbcx.html">宣传信息发布查询 </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="xcxxlbgl.html">宣传信息发布管理 </a>
+                        </li>
+                        <li class="divider">
+                        <li>
+                            <a href="xcxxfbtj.html">宣传信息发布统计 </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--宣传品(资料)制作-->
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传品(资料)制作<strong
+                            class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="xcpzzsq.html">宣传品(资料)制作申请 </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="xcpzhzcx.html">宣传品(资料)制作查询 </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="xcpzhiztj.html">宣传品(资料)制作统计 </a>
+                        </li>
+                    </ul>
+                </li>
+                <!--宣传物资领用-->
+                <li class="dropdown ">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传物资领用<strong
+                            class="caret"></strong></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="xcwzlysq.html">宣传物资领用申请 </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="xcwzlycx.html">宣传物资领用查询 </a>
+                        </li>
+                        <li class="divider">
+                        </li>
+                        <li>
+                            <a href="xcwzlytj.html">宣传物资领用统计 </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--以下是查询导航栏-->
+    <nav class="navbar xcsw-navbar navbar-hei" role="navigation">
+        <form class="navbar-form navbar-left">
+            <div class="form-group demoadd">
+                <!--两个输入框（导航栏）-->
+                <strong class="text-primary">统计时段</strong>
+                <input type="text" style="width: 80px">&nbsp;&nbsp;-&nbsp;
+                <input type="text" style="width: 80px">
+                &nbsp;&nbsp;
+                <!--三个按钮（导航栏）-->
+                <a href="javascript:;"><i class="glyphicon glyphicon-search"></i>&nbsp;查询</a>
+                &nbsp;
+                <a href="javascript:;"><i class="glyphicon glyphicon-refresh"></i>&nbsp;重置</a>
+                &nbsp;
+                <a onclick="exportfile()"><i class="glyphicon glyphicon-save"></i>&nbsp;导出</a>
+            </div>
+        </form>
+    </nav>
+    <div id="content">
+    <!--标题与时间-->
+    <h4 class="text-center"><strong>宣传物资领用统计表</strong></h4>
+    <div class="row">
+        <div class="col-md-6"><h5 class="text-left">统计时段：2014-01-01-2014-06-30</h5></div>
+        <div class="col-md-6"><h5 class="text-right">统计人：张明磊</h5></div>
+    </div>
+
+    <!--表格-->
+    <table class="table table-bordered" id="tableExcel">
+        <thead>
+        <tr class="xcsw-navbar">
+            <th class="text-info">No.</th>
+            <th class="text-info">领用人</th>
+            <th class="text-info">宣传手册</th>
+            <th class="text-info">纪念胸章</th>
+            <th class="text-info">样品吊坠</th>
+            <th class="text-info">电影票</th>
+            <th class="text-info">其他</th>
+            <th class="text-info">统计</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>李建明</td>
+            <td id="xcsc"></td>
+            <td id="jnxz"></td>
+            <td id="ypdz"></td>
+            <td id="dyp"></td>
+            <td id="other"></td>
+            <td id="tongji"></td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td><strong>总计</strong></td>
+            <td><strong id="xcsczj"></strong></td>
+            <td><strong id="jnxzzj"></strong></td>
+            <td><strong id="ypdzzj"></strong></td>
+            <td><strong id="dypzj"></strong></td>
+            <td><strong id="otherzj"></strong></td>
+            <td><strong id="tongjizj"></strong></td>
+        </tr>
+        </tbody>
+    </table>
+        <!--宣传信息发布统计图-->
+        <div class="col-md-12 column">
+            <div class="card">
+                <div class="card-footer text-muted">
+                    <img src="picture/pie-chart.png" style="width: 15px;height: 15px">
+                    <b style="color: black">&nbsp;宣传信息发布统计图</b>
+                    <div class="glyphicon glyphicon-refresh"
+                         style="color: rgba(51,231,56,0.86);float: right"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="xcproject" style="width: 100%;height: 300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+<!--导出弹出框-->
+<script>
+    function  exportfile() {
+        layer.confirm('请选择导出的类型', {
+            btn: ['PDF', 'EXCEL'] //按钮
+        }, function () {
+            exportpdf();
+            layer.msg('导出成功', {icon: 1});
+        }, function () {
+            method5(tableExcel);
+            layer.msg('导出成功', {icon: 1});
+        });
+    }
+</script>
+<!--颜色随机-->
+<script>
+    function getRandomColor() {
+        var c = '#';
+        var cArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        for (var i = 0; i < 6; i++) {
+            var cIndex = Math.round(Math.random() * 15);
+            c += cArray[cIndex];
+        }
+        return c;
+    }
+</script>
+<!--前端统计数据-->
+<script>
+    //前端统计数据
+    $(function () {
+        var namechoose;
+        var xcsc=0;var jnxz=0;var ypdz=0;var dyp=0;var other=0;var tongji=0;
+        $.ajax({
+            url: "xcwz/all",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    namechoose = data[i].name;
+                    if(namechoose == "宣传手册"){
+                        xcsc = xcsc + 1;
+                    }
+                    else if(namechoose == "纪念胸章"){
+                        jnxz = jnxz + 1;
+                    }
+                    else if(namechoose == "样品吊坠"){
+                        ypdz = ypdz + 1;
+                    }
+                    else if(namechoose == "电影票"){
+                        dyp = dyp + 1;
+                    }
+                    else if(namechoose == "其他"){
+                        other = other + 1;
+                    }
+                }
+                tongji = xcsc + jnxz + ypdz + dyp + other;
+                $("#xcsc").eq(0).html(xcsc);
+                $("#jnxz").eq(0).html(jnxz);
+                $("#ypdz").eq(0).html(ypdz);
+                $("#dyp").eq(0).html(dyp);
+                $("#other").eq(0).html(other);
+                $("#tongji").eq(0).html(tongji);
+
+                $("#xcsczj").eq(0).html(xcsc);
+                $("#jnxzzj").eq(0).html(jnxz);
+                $("#ypdzzj").eq(0).html(ypdz);
+                $("#dypzj").eq(0).html(dyp);
+                $("#otherzj").eq(0).html(other);
+                $("#tongjizj").eq(0).html(tongji);
+
+                <!--统计图-->
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('xcproject'));
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: ''
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['数目']
+                    },
+                    xAxis: {
+                        data: ["宣传手册", "纪念胸章", "样品吊坠", "电影票", "其他"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '数目',
+                        type: 'bar',
+                        itemStyle: {
+                            normal: {
+                                //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                                color: function (params) {
+                                    // build a color map as your need.
+
+                                    var colorList = [
+                                        getRandomColor(), getRandomColor(), getRandomColor(),
+                                        getRandomColor(), getRandomColor(), getRandomColor(),
+                                        getRandomColor(), getRandomColor(), getRandomColor(),
+                                    ];
+                                    return colorList[params.dataIndex]
+                                },
+                                //以下为是否显示，显示位置和显示格式的设置了
+                                label: {
+                                    show: true,
+                                    position: 'top',
+//                             formatter: '{c}'
+                                    formatter: '{b}\n{c}'
+                                }
+                            }
+                        },
+                        data: [xcsc, jnxz, ypdz, dyp, other]
+                    }]
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+
+            }
+        });
+    });
+
+</script>
+<!--导出-->
+<script language="JavaScript" type="text/javascript">
+    //第五种方法
+    var idTmr;
+    function  getExplorer() {
+        var explorer = window.navigator.userAgent ;
+        //ie
+        if (explorer.indexOf("MSIE") >= 0) {
+            return 'ie';
+        }
+        //firefox
+        else if (explorer.indexOf("Firefox") >= 0) {
+            return 'Firefox';
+        }
+        //Chrome
+        else if(explorer.indexOf("Chrome") >= 0){
+            return 'Chrome';
+        }
+        //Opera
+        else if(explorer.indexOf("Opera") >= 0){
+            return 'Opera';
+        }
+        //Safari
+        else if(explorer.indexOf("Safari") >= 0){
+            return 'Safari';
+        }
+    }
+    function method5(tableid) {
+        if(getExplorer()=='ie')
+        {
+            var curTbl = document.getElementById(tableid);
+            var oXL = new ActiveXObject("Excel.Application");
+            var oWB = oXL.Workbooks.Add();
+            var xlsheet = oWB.Worksheets(1);
+            var sel = document.body.createTextRange();
+            sel.moveToElementText(curTbl);
+            sel.select();
+            sel.execCommand("Copy");
+            xlsheet.Paste();
+            oXL.Visible = true;
+
+            try {
+                var fname = oXL.Application.GetSaveAsFilename("Excel.xls", "Excel Spreadsheets (*.xls), *.xls");
+            } catch (e) {
+                print("Nested catch caught " + e);
+            } finally {
+                oWB.SaveAs(fname);
+                oWB.Close(savechanges = false);
+                oXL.Quit();
+                oXL = null;
+                idTmr = window.setInterval("Cleanup();", 1);
+            }
+
+        }
+        else
+        {
+            tableToExcel(tableid)
+        }
+    }
+    function Cleanup() {
+        window.clearInterval(idTmr);
+        CollectGarbage();
+    }
+    var tableToExcel = (function() {
+        var uri = 'data:application/vnd.ms-excel;base64,',
+            template = '<html><head><meta charset="UTF-8"></head><body><table>{table}</table></body></html>',
+            base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) },
+            format = function(s, c) {
+                return s.replace(/{(\w+)}/g,
+                    function(m, p) { return c[p]; }) }
+        return function(table, name) {
+            if (!table.nodeType) table = document.getElementById(table)
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+            window.location.href = uri + base64(format(template, ctx))
+        }
+    })()
+
+</script>
+</html>

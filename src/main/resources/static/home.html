@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宣传管理</title>
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/ownCss/view.css">
+    <script src="assets/js/echarts.common.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <!--导航栏-->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" style="max-width:40px;margin-top:-10px;" src="picture/nav_fish.svg">
+                    </a>
+                    <a class="navbar-brand" href="home.html">宣传管理</a>
+                </div>
+            </nav>
+            <!--选项卡-->
+            <div class="tabbable" id="tabs-104753">
+                <ul class="nav nav-tabs">
+                    <li style="width:50%" class="active">
+                        <a href="#xcswgailan" data-toggle="tab">宣传事务概览</a>
+                    </li>
+                    <li style="width: 50%">
+                        <a href="#xcswgl" data-toggle="tab">宣传事务管理</a>
+                    </li>
+                    <!--<li>-->
+                        <!--<a href="#xcjhgl" data-toggle="tab">宣传计划管理</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#xcfagl" data-toggle="tab">宣传方案管理</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#xcswcxtj" data-toggle="tab">宣传事务查询统计</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#xcxgzzfx" data-toggle="tab">宣传效果追踪分析</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a href="#xcgzzj" data-toggle="tab">宣传工作总结</a>-->
+                    <!--</li>-->
+                </ul>
+                <div class="tab-content">
+                    <!--宣传事务概览-->
+                    <div class="tab-pane active" id="xcswgailan">
+                        <p>
+                        <div class="col-md-3 column">
+                            <!--左侧栏-->
+                            <div class="card">
+                                <div class="card-footer text-muted">
+                                    <div class="glyphicon glyphicon-star" style="color: rgba(231,204,23,0.86)"></div>
+                                    <b style="color: black">本月宣传管理数据小档案</b>
+                                    <div class="glyphicon glyphicon-refresh"
+                                         style="color: rgba(51,231,56,0.86);float: right"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div style="text-align: left;margin-top: 20px">
+                                            <div class="glyphicon glyphicon-play leftListtip"></div>&nbsp;宣传计划<span
+                                                class="leftListNum">13</span>项，完成<span class="leftListNum">15</span>项
+                                            <hr class="leftListhr"/>
+                                            <div class="glyphicon glyphicon-play leftListtip"></div>&nbsp;宣传方案
+                                            <span class="leftListNum">16</span>项，完成
+                                            <span class="leftListNum">10</span>项
+                                            <hr class="leftListhr"/>
+                                            <div class="glyphicon glyphicon-play leftListtip"></div>&nbsp;<b>信息发布：</b><br>
+                                            <div style="margin-left: 50px">
+                                                电视媒体类<span class="leftListNum">24</span>项，当前<span
+                                                    class="leftListNum">2</span>项<br>
+                                                网络媒体类<span class="leftListNum">12</span>项<br>
+                                                电梯海报类<span class="leftListNum">7</span>项，当前<span
+                                                    class="leftListNum">4</span>项<br>
+                                                新闻稿件类<span class="leftListNum">5</span>项<br>
+                                                微博微信类<span class="leftListNum">28</span>项<br>
+                                                其他<span class="leftListNum">2</span>项<br>
+                                            </div>
+                                            <hr class="leftListhr"/>
+                                            <div class="glyphicon glyphicon-play leftListtip"></div>&nbsp;宣传品（资料）制作<br>
+                                            <div style="margin-left: 50px">
+                                                共<span class="leftListNum">15</span>项，完成<span
+                                                    class="leftListNum">12</span>项<br>
+                                                内部制作<span class="leftListNum">10</span>项<br>
+                                                广告公司制作<span class="leftListNum">5</span>项<br>
+                                                总费用<span class="leftListNum">3650.00</span>元<br>
+                                            </div>
+                                            <hr class="leftListhr"/>
+                                            <div class="glyphicon glyphicon-play leftListtip"></div>&nbsp;宣传物资领用
+                                            <span class="leftListNum">89</span>项<br>
+                                            <br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--左侧栏END-->
+                        </div>
+                        <!--右侧统计图-->
+                        <div class="col-md-9 column">
+                            <div class="row clearfix">
+                                <!--本月宣传计划统计-->
+                                <div class="col-md-6 column">
+                                    <div class="card">
+                                        <div class="card-footer text-muted">
+                                            <img src="picture/pie-chart.png" style="width: 15px;height: 15px">
+                                            <b style="color: black">&nbsp;本月宣传计划统计</b>
+                                            <div class="glyphicon glyphicon-refresh"
+                                                 style="color: rgba(51,231,56,0.86);float: right"></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="xcproject" style="width: 100%;height: 200px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--本月宣传方案统计-->
+                                <div class="col-md-6 column">
+                                    <div class="card">
+                                        <div class="card-footer text-muted">
+                                            <img src="picture/pie-chart.png" style="width: 15px;height: 15px">
+                                            <b style="color: black">&nbsp;本月宣传方案统计</b>
+                                            <div class="glyphicon glyphicon-refresh"
+                                                 style="color: rgba(51,231,56,0.86);float: right"></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="xctj" style="width: 100%;height: 200px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <!--近5月宣传品（资料）制作申请统计-->
+                                <div class="col-md-6 column">
+                                    <div class="card">
+                                        <div class="card-footer text-muted">
+                                            <img src="picture/pie-chart.png" style="width: 15px;height: 15px">
+                                            <b style="color: black">&nbsp;近5月宣传品（资料）制作申请统计</b>
+                                            <div class="glyphicon glyphicon-refresh"
+                                                 style="color: rgba(51,231,56,0.86);float: right"></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="xcmaketj" style="width: 100%;height: 200px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--近5月宣传物资领用统计-->
+                                <div class="col-md-6 column">
+                                    <div class="card">
+                                        <div class="card-footer text-muted">
+                                            <img src="picture/pie-chart.png" style="width: 15px;height: 15px">
+                                            <b style="color: black">&nbsp;近5月宣传物资领用统计</b>
+                                            <div class="glyphicon glyphicon-refresh"
+                                                 style="color: rgba(51,231,56,0.86);float: right"></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="xcthingtj" style="width: 100%;height: 200px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <!--本月宣传信息发布统计-->
+                                <div class="col-md-12 column">
+                                    <div class="card">
+                                        <div class="card-footer text-muted">
+                                            <img src="picture/pie-chart.png" style="width: 15px;height: 15px">
+                                            <b style="color: black">&nbsp;本月宣传信息发布统计</b>
+                                            <div class="glyphicon glyphicon-refresh"
+                                                 style="color: rgba(51,231,56,0.86);float: right"></div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div id="xcalltj" style="width: 100%;height: 240px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+                    <!--宣传事务管理-->
+                    <div class="tab-pane" id="xcswgl">
+                        <p>
+                        <div class="col-md-12 column">
+                            <div class="col-md-1">
+                                <img src="picture/wr.PNG"
+                                     style="text-align: center;margin:0 auto;margin-top: 10px;width: 40px;height: 40px;">
+                            </div>
+                            <div class="col-md-11">
+                                <h4>宣传事务管理</h4>
+                                <hr style="border-bottom: #56bbff 1px solid;"/>
+                                <div class="card-group">
+                                    <!--宣传事务发布-->
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-md-5 ">
+                                                <img class="card-img-top picgeshi" src="picture/xcInformation.png"
+                                                     alt="Card image cap">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div style="text-align: left;margin-top: 10px">
+                                                    <a href="xcxxfbsq.html"><img
+                                                            src="picture/enter.png">宣传信息发布申请</a>
+                                                    </br>
+                                                    <a href="xcxxfbcx.html"><img src="picture/enter.png">宣传信息发布查询</a>
+                                                    </br>
+                                                    <a href="xcxxlbgl.html"><img src="picture/enter.png">宣传信息发布管理</a>
+                                                    </br>
+                                                    <a href="xcxxfbtj.html"><img src="picture/enter.png">宣传信息发布统计</a>
+                                                    </br> </br>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-muted" style="text-align: center">
+                                            宣传信息发布
+                                        </div>
+                                    </div>
+                                    <!--宣传品制作申请-->
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-md-5 ">
+                                                <img class="card-img-top picgeshi" src="picture/xcData.png"
+                                                     alt="Card image cap">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div style="text-align: left;margin-top: 10px">
+                                                    <a href="xcpzzsq.html"><img src="picture/enter.png"> 宣传品(资料)制作申请</a>
+                                                    </br> </br>
+                                                    <a href="xcpzhzcx.html"><img src="picture/enter.png"> 宣传品(资料)制作查询</a>
+                                                    </br> </br>
+                                                    <a href="xcpzhiztj.html"><img src="picture/enter.png"> 宣传品(资料)制作统计</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-muted" style="text-align: center">
+                                            宣传品(资料)制作
+                                        </div>
+                                    </div>
+                                    <!--宣传物资领用-->
+                                    <div class="card">
+                                        <div class="row">
+                                            <div class="col-md-5 ">
+                                                <img class="card-img-top picgeshi" src="picture/xcmaterial.png"
+                                                     alt="Card image cap">
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div style="text-align: left;margin-top: 10px">
+                                                    <a href="xcwzlysq.html"><img src="picture/enter.png"> 宣传物资领用申请</a>
+                                                    </br> </br>
+                                                    <a href="xcwzlycx.html"><img src="picture/enter.png"> 宣传物资领用查询</a>
+                                                    </br> </br>
+                                                    <a href="xcwzlytj.html"><img src="picture/enter.png"> 宣传物资领用统计</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-muted" style="text-align: center">
+                                            宣传物资领用
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+
+                    <!--&lt;!&ndash;宣传方案管理&ndash;&gt;-->
+                    <!--<div class="tab-pane" id="xcfagl">-->
+                        <!--<p>-->
+                        <!--</p>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;宣传事务查询统计&ndash;&gt;-->
+                    <!--<div class="tab-pane" id="xcswcxtj">-->
+                        <!--<p>-->
+                        <!--</p>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;宣传效果追踪分析&ndash;&gt;-->
+                    <!--<div class="tab-pane" id="xcxgzzfx">-->
+                        <!--<p>-->
+                        <!--</p>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;宣传工作总结&ndash;&gt;-->
+                    <!--<div class="tab-pane" id="xcgzzj">-->
+                        <!--<p>-->
+                        <!--</p>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--颜色随机-->
+<script>
+    function getRandomColor() {
+        var c = '#';
+        var cArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        for (var i = 0; i < 6; i++) {
+            var cIndex = Math.round(Math.random() * 15);
+            c += cArray[cIndex];
+        }
+        return c;
+    }
+</script>
+<!--统计图-->
+<!--本月宣传计划统计-->
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('xcproject'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data: ['项']
+        },
+        xAxis: {
+            data: ["宣传组", "招募组", "服务组", "维护组", "质监组"]
+        },
+        yAxis: {},
+        series: [{
+            name: '项目数',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                    color: function (params) {
+                        // build a color map as your need.
+
+                        var colorList = [
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    //以下为是否显示，显示位置和显示格式的设置了
+                    label: {
+                        show: true,
+                        position: 'top',
+//                             formatter: '{c}'
+                        formatter: '{b}\n{c}'
+                    }
+                }
+            },
+            data: [16, 32, 15, 22, 20]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<!--本月宣传方案统计-->
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('xctj'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data: ['项']
+        },
+        xAxis: {
+            data: ["宣传组", "招募组", "服务组", "维护组", "质监组"]
+        },
+        yAxis: {},
+        series: [{
+            name: '项目数',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                    color: function (params) {
+                        // build a color map as your need.
+                        var colorList = [
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    //以下为是否显示，显示位置和显示格式的设置了
+                    label: {
+                        show: true,
+                        position: 'top',
+//                             formatter: '{c}'
+                        formatter: '{b}\n{c}'
+                    }
+                }
+            },
+            data: [32, 10, 1, 5, 9]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<!--近5月宣传品（资料）制作申请统计-->
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('xcmaketj'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data: ['项']
+        },
+        xAxis: {
+            data: ["2017/02", "2017/03", "2017/04", "2017/05", "2017/06"]
+        },
+        yAxis: {},
+        series: [{
+            name: '申请数',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                    color: function (params) {
+                        // build a color map as your need.
+                        var colorList = [
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    //以下为是否显示，显示位置和显示格式的设置了
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}'
+//                        formatter: '{b}\n{c}'
+                    }
+                }
+            },
+            data: [6, 14, 5, 10, 8]
+        },
+            {
+                name: '申请数',
+                type: 'line',
+//                yAxisIndex: 2,
+                data: [6, 14, 5, 10, 8]
+            }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<!--近5月宣传物资领用统计-->
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('xcthingtj'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data: ['项']
+        },
+        xAxis: {
+            data: ["2017/02", "2017/03", "2017/04", "2017/05", "2017/06"]
+        },
+        yAxis: {},
+        series: [{
+            name: '领用数目',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                    color: function (params) {
+                        // build a color map as your need.
+                        var colorList = [
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    //以下为是否显示，显示位置和显示格式的设置了
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}'
+//                        formatter: '{b}\n{c}'
+                    }
+                }
+            },
+            data: [56, 81, 75, 90, 53]
+        },
+            {
+                name: '领用数目',
+                type: 'line',
+//                yAxisIndex: 2,
+                data: [56, 81, 75, 90, 53]
+            }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+<!--本月宣传信息发布统计-->
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('xcalltj'));
+    // 指定图表的配置项和数据
+    var option = {
+        title: {
+            text: ''
+        },
+        tooltip: {},
+        legend: {
+            data: ['项']
+        },
+        xAxis: {
+            data: ["电视媒体类", "网络媒体类", "电梯海报类", "新闻稿件类", "微博微信类", "其他"]
+        },
+        yAxis: {},
+        series: [{
+            name: '发布数目',
+            type: 'bar',
+            itemStyle: {
+                normal: {
+                    //好，这里就是重头戏了，定义一个list，然后根据所以取得不同的值，这样就实现了，
+                    color: function (params) {
+                        // build a color map as your need.
+                        var colorList = [
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                            getRandomColor(), getRandomColor(), getRandomColor(),
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    //以下为是否显示，显示位置和显示格式的设置了
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{c}'
+//                        formatter: '{b}\n{c}'
+                    }
+                }
+            },
+            data: [15, 12, 9, 16, 19, 5]
+        }]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+</script>
+</body>
+</html>

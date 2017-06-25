@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>宣传信息发布申请</title>
+    <script src="assets/js/jquery-3.2.1.js"></script>
+    <script src="assets/layer/layer.js"></script>
+    <script src="assets/js/dialog/jquery.hDialog.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/ownCss/view.css">
+    <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="assets/js/Clock.js"></script>
+
+</head>
+<body>
+<!--布局设置-->
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <!--导航栏-->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1"><span
+                            class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span></button>
+                    <a class="navbar-brand" href="#">
+                        <img alt="Brand" style="max-width:40px;margin-top:-10px;" src="picture/nav_fish.svg">
+                    </a>
+                    <a class="navbar-brand" href="home.html">宣传管理</a>
+                </div>
+                <!--下拉菜单-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <!--宣传信息发布-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传信息发布<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="xcxxfbsq.html">宣传信息发布申请 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcxxfbcx.html">宣传信息发布查询 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcxxlbgl.html">宣传信息发布管理 </a>
+                                </li>
+                                <li class="divider">
+                                <li>
+                                    <a href="xcxxfbtj.html">宣传信息发布统计 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--宣传品(资料)制作-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传品(资料)制作<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="xcpzzsq.html">宣传品(资料)制作申请 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcpzhzcx.html">宣传品(资料)制作查询 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcpzhiztj.html">宣传品(资料)制作统计 </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--宣传物资领用-->
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown">宣传物资领用<strong
+                                    class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="xcwzlysq.html">宣传物资领用申请 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcwzlycx.html">宣传物资领用查询 </a>
+                                </li>
+                                <li class="divider">
+                                </li>
+                                <li>
+                                    <a href="xcwzlytj.html">宣传物资领用统计 </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--标题 h4居中-->
+            <h4 class="text-center">
+                宣传发布申请
+            </h4>
+            <!--状态 h6靠左-->
+            <div style="color: #2aabd2;float:left">
+                <h6 style="float: left">
+                    状态:
+                </h6>
+                <!--审批/待审批-->
+                <h6 style="float: left" id="">
+                    待审批
+                </h6>
+            </div>
+
+            <!--提交申请表单-->
+            <form>
+                <table class="table table-bordered " style="text-align: center;vertical-align: middle">
+
+                    <tr>
+                        <td class="info" style="width: 16%">
+                            申请部门
+                        </td>
+                        <td >
+                            血源管理科
+                        </td>
+                        <td class="info tablewidth">
+                            申请时间
+                        </td>
+                        <td>
+                            <span id="clock"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            申请人
+                        </td>
+                        <td >
+                            张明磊
+                        </td>
+                        <td class="info">
+                            联系电话
+                        </td>
+                        <td>
+                            15017760683
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            *标题
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="sqtitle" required="required" id="sqtitle" placeholder="请输入不超过15字符"
+                                   maxlength="15" onkeyup="checkLength(this)" style="width: 100%;height: 95%">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            *类别
+                        </td>
+                        <td>
+                            <select id="leibie_choose" style="width: 100%">
+                                <option value="电视媒体类">电视媒体类</option>
+                                <option value="网络媒体类">网络媒体类</option>
+                                <option value="电梯海报类">电梯海报类</option>
+                                <option value="新闻稿件类">新闻稿件类</option>
+                                <option value="微博微信类">微博微信类</option>
+                                <option value="其他">其他</option>
+                                <!--<option id="showleibie" value=""></option>-->
+                            </select>
+                        </td>
+                        <td class="info">
+                        </td>
+                        <td >
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            发布简介(对象)
+                        </td>
+                        <td id="meijie" colspan="3">
+                            <div style="float: left">
+                                <!--<input type="checkbox">广州日报-->
+                                <!--<input type="checkbox">南方都市报-->
+                                <!--<input type="checkbox">南方周末-->
+                                <label><input type="radio" name="radio" id="radio21" value="广州日报"/> 广州日报</label>
+                                <label><input type="radio" name="radio" id="radio22" value="南方都市报"/> 南方都市报</label>
+                                <label><input type="radio" name="radio" id="radio23" value="南方周末"/> 南方周末</label>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info">
+                            信息发布(投放)<br>开始时间
+                        </td>
+                        <td style="vertical-align: middle">
+                            <input type="date" id="starttime" style="width: 100%;height: 100%">
+                        </td>
+                        <td class="info">
+                            信息发布(投放)<br>结束时间
+                        </td>
+                        <td style="vertical-align: middle">
+                            <input type="date" id="endtime" style="width: 100%;height: 100%">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            内容
+                        </td>
+                        <td  colspan="3">
+                            <!--ie兼容问题解决断行问题防止自动变为在一行word-break、word-wrap”控制断行)-->
+                            <textarea id="content" placeholder="请输入内容..."
+                                      style="width: 100%;height: 100px;overflow: auto;word-break: break-all"></textarea>
+                            <div style="float: left">
+                                <a>
+                                    <button type="button" class="btn btn-primary" style="margin-left: 20px" title="QQ">
+                                        <i class="fa fa-qq" aria-hidden="true"></i>
+                                        &nbsp;QQ空间
+                                    </button>
+                                </a>
+                                <a>
+                                    <button type="button" class="btn btn-primary" style="background-color: #228b22"
+                                            title="微信"><i class="fa fa-weixin" aria-hidden="true"></i>&nbsp;微信平台
+                                    </button>
+                                </a>
+                                <a>
+                                    <button type="button" class="btn btn-primary" style="background-color: #ff4500"
+                                            title="新浪微博"><i class="fa fa-weibo" aria-hidden="true"></i>&nbsp;新浪微博
+                                    </button>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            备注
+                        </td>
+                        <td colspan="3">
+                            <!--ie兼容问题解决断行问题防止自动变为在一行word-break、word-wrap”控制断行)-->
+                            <textarea id="beizhu" placeholder=""
+                                      style="width: 100%;height: 60px;overflow: auto;word-break: break-all"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            附件
+                        </td>
+                        <td colspan="3">
+                            <!--添加附件-->
+                            <div id="wrapper">
+                                <div class="box">
+                                    <div class="demo">
+                                        <a href="javascript:;" style="float: left"
+                                           class="rotateInDownLeft dialog demo3"><i
+                                                class="glyphicon glyphicon-plus"></i>&nbsp;添加</a>
+                                        <div style="float:left;margin-top:1%;margin-left: 1%;color: red" id="filePath">
+                                            暂无文件
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div style="margin-top: 30px;margin-left: 30px">
+                                        <div style="float:left" id="fileName"></div>
+                                        <a href="" id="openfile" download="">
+                                            <div style="float: left;margin-left: 10px" id="openfont">
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <!--<div style="float:left;margin-left: 1%" id="fileUrl"></div>-->
+                                    <!--<a href="" id="openfile" download="">打开Open</a>-->
+                                    <div id="HBox">
+                                        <form action="" method="post" onsubmit="return false;">
+                                            <form></form>
+                                            <div style="text-align: center">
+                                                <form id="uploadForm">
+                                                    <br>
+                                                    <p><input type="file" name="file"/></p>
+                                                    <div id="preview"
+                                                         style=" width:100%; border: 1px solid #fe0000; color: #5e89e9">
+                                                        备注：多文件请压缩上传（.zip .rar）
+                                                    </div>
+                                                    <br>
+                                                    <input type="button" value="确定上传" onclick="doUpload()"/>
+                                                </form>
+                                            </div>
+                                        </form>
+                                    </div><!-- HBox end -->
+                                </div><!-- box end -->
+                            </div><!-- wrapper end -->
+                            <!--添加附件END-->
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            领导审批意见
+                        </td>
+                        <td  colspan="3">
+
+                        </td>
+                    </tr>
+                </table>
+                <!--&lt;!&ndash;左下意见&ndash;&gt;-->
+                <!--<table class="table table-bordered " style="width:49%;vertical-align: middle;float: left">-->
+                    <!--<tr>-->
+                        <!--<td class="info">-->
+                            <!--<div style="float: left">-->
+                                <!--选择常用意见：&nbsp;-->
+                            <!--</div>-->
+                            <!--<div style="float: left">-->
+                                <!--<select id="ispass_choose" style="width: 100%">-->
+                                    <!--<option value="通过">通过</option>-->
+                                    <!--<option value="不通过">不通过</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td class="info">-->
+                            <!--<div style="float: left">-->
+                                <!--填写审批意见：&nbsp;-->
+                            <!--</div>-->
+                            <!--<div style="float: right">-->
+                                <!--<a href="">-->
+                                    <!--添加为常用意见-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<textarea id="advise" placeholder=""-->
+                                      <!--style="width: 100%;height: 60px;overflow: auto;word-break: break-all"></textarea>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+                <!--右下提交领导-->
+                <table class="table table-bordered " style="width:100%;vertical-align: middle;text-align: center;float: left">
+                    <tr>
+                        <td class="info" colspan="2">
+                            功能操作：&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="info" style="vertical-align: middle">
+                            <div style="margin-top: 0px">
+                                <button onclick="tjbl()" type="button" class="btn btn-sm"
+                                        style="background-color: #dca7a7;width: 49%;float: left;"
+                                        title="送科室领导"><i class="glyphicon glyphicon-pencil" style="color: yellow"
+                                                         aria-hidden="true"></i><i style="color: #761c19">送科室领导</i>
+                                </button>
+                                <button onclick="tjbl()" name="parentIframe" type="button" class="btn btn-sm"
+                                        style="width: 49%;float: right"
+                                        title="送部门领导"><i class="glyphicon glyphicon-pencil" style="color: yellow"
+                                                         aria-hidden="true"></i><i style="color: #761c19">送部门领导</i>
+                                </button>
+                            </div>
+                            <div style="margin-top: 50px;margin-bottom: 0px">
+                                <button onclick="tjbl()" name="parentIframe" type="button" class="btn btn-sm"
+                                        style="background-color: #67b168;width: 49%;float: left"
+                                        title="送中心领导"><i class="glyphicon glyphicon-pencil" style="color: yellow"
+                                                         aria-hidden="true"></i><i style="color: #761c19">送中心领导</i>
+                                </button>
+                                <button onclick="tjbl()" name="parentIframe" type="button" class="btn btn-sm"
+                                        style="background-color: khaki;width: 49%;float: right"
+                                        title="退回拟稿人"><i class="glyphicon glyphicon-circle-arrow-left"
+                                                         style="color: yellow" aria-hidden="true"></i><i
+                                        style="color: #761c19">退回拟稿人</i>
+                                </button>
+                            </div>
+                        </td>
+                        <td class="info">
+                            <div style="margin-top: 15px">
+                                <a href="">
+                                    查看流程图
+                                </a>
+                                <br> <br>
+                                <a href="">
+                                    查看流程跟踪
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <!--直接提交页面按钮-->
+                <div style="text-align:center;">
+                    <button id="btn-save" type="button" class="btn btn-sm" style="background-color: #68e1e9;"
+                            title="提交"><i class="glyphicon glyphicon-pencil" style="color: yellow"
+                                          aria-hidden="true"></i><i style="color: #761c19">提交</i>
+                    </button>
+                </div>
+            </form>
+            <!--提交申请表单END-->
+
+        </div>
+    </div>
+</div>
+</body>
+
+<!--标题输入字数控制-->
+<script>
+    function checkLength(which) {
+        var maxchar=30;
+        iCount = which.value.replace(/[^u0000-u00ff]/g,"aa").length;
+        if(iCount<maxchar)
+        {
+            which.size=iCount;
+        }
+        else {
+            $.tooltip('标题不能超过15字');
+        }
+    }
+</script>
+<!--上传附件弹出窗口-->
+<script src="assets/js/dialog/jquery.hDialog.js"></script>
+<script>
+    var filePath;
+    var fileName;
+    function doUpload() {
+        var formData = new FormData($("#uploadForm")[0]);
+
+        $.ajax({
+            url: '/upload/uploadfile',
+            type: 'POST',
+            data: formData,
+            dataType: 'JSON',
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+
+            success: function (data) {
+                if (data != "null") {
+                    filePath = data.url;
+                    fileName = data.fileName;
+                    var getfileresult = "附件已上传服务器";
+                    var getfileName = data.fileName;
+                    var getfileurl = data.url;
+                    var openfont = "Open";
+                    var downfile = document.getElementById("openfile");
+                    downfile.href = data.url;
+                    downfile.download = data.url;
+                    $("#filePath").eq(0).html(getfileresult);
+                    $("#fileName").eq(0).html(getfileName);
+                    $("#fileUrl").eq(0).html(getfileurl);
+                    $("#openfont").eq(0).html(openfont);
+                    $.tooltip('上传附件成功，请返回继续操作', 2000, true);
+//                    alert('上传附件成功，图片地址为:'+data);
+                }
+                else {
+                    $.tooltip('上传附件失败，请选择附件');
+//                    alert('上传附件失败');
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $.tooltip('上传附件失败');
+//                alert('上传失败！');
+            }
+        });
+    }
+    $(function () {
+        var $el = $('.dialog');
+        $el.hDialog();
+        //改变宽和高
+        $('.demo3').hDialog({width: 400, height: 150});
+    });
+</script>
+<!--弹出提交办理审批窗口-->
+<script>
+    function tjbl() {
+        layer.open({
+            type: 2,
+            skin: 'layui-layer-lan',
+            title: '提交办理',
+            fix: false,
+            shadeClose: true,
+            maxmin: true,
+            area: ['70%', '83%'],
+            content: 'tjbl.html',
+        });
+    }
+</script>
+<!--获取追加类别-->
+<script>
+    //获取所有内容
+    $(function () {
+        $.ajax({
+            url: "xclb/all",
+            success: function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $("#leibie_choose").append(
+                        "<option value='" + data[i].name + "'>" + data[i].name + "</option>"
+                    );
+                }
+            }
+        });
+    });
+</script>
+<!--页面内容保存数据库-->
+<script src="assets/js/dialog/jquery.hDialog.js"></script>
+<script>
+    var clock = new Clock();
+    clock.display(document.getElementById("clock"));
+    $("#btn-save").bind('click', function () {
+        var title = $("#sqtitle").val();
+        var leibie_choose = $("#leibie_choose option:selected").val();
+        var content = $("#content").val();
+        var beizhu = $("#beizhu").val();
+        var starttime = $("#starttime").val();
+        var endtime = $("#endtime").val();
+//        var ispass = $("#ispass_choose").val();
+//        var advise = $("#advise").val();
+        var meijie = $('input:radio[name="radio"]:checked').val();
+
+        var filepath = filePath;
+        var filename = fileName;
+        var clock = new Clock();
+        var applydate = clock.toSimpleDate();
+        var xcfbsq = {
+            title: title,
+            xcxxleibie: leibie_choose,
+            content: content,
+            beizhu: beizhu,
+            starttime: starttime,
+            endtime: endtime,
+            ispass: '待审批',
+//            advise: advise,
+            filename: filename,
+            applytime: applydate,
+            filepath: filepath,
+            meijie: meijie
+        };
+        if (title != "" && title.value != "") {
+            $.ajax({
+                url: "xcxxsq",
+                method: "POST",
+                contentType: "application/json;charset=utf-8",
+                data: JSON.stringify(xcfbsq),
+                dataType: "json",
+                success: function (data) {
+                    alert("保存成功！");
+                    parent.location.href = 'xcxxfbcx.html'
+                },
+                error: function (message) {
+                    alert("保存失败");
+                }
+            });
+        }
+        else {
+            $.tooltip('请填写标题');
+            return false;
+        }
+
+    });
+</script>
+</html>
